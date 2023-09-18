@@ -23,7 +23,7 @@ export function Navbar() {
             </h1>
           </Link>
 
-          <div className="hidden ml-11 flex-row gap-3 md:flex">
+          <nav className="hidden ml-11 flex-row gap-3 md:flex">
             {routes.map((route) => (
               <Link key={route.path} href={route.path} legacyBehavior>
                 <Button
@@ -34,8 +34,8 @@ export function Navbar() {
                 </Button>
               </Link>
             ))}
-          </div>
-          <div className="hidden ml-auto flex-shrink-0 gap-3 md:flex">
+          </nav>
+          <nav className="hidden ml-auto flex-shrink-0 gap-3 md:flex">
             <Link href="https://app.progy.com.br" legacyBehavior>
               <Button asChild variant="outline">
                 <span className="z-1 relative">Entrar</span>
@@ -46,7 +46,7 @@ export function Navbar() {
                 <span className="z-1 relative">Começar</span>
               </Button>
             </Link>
-          </div>
+          </nav>
           <div className="ml-auto flex items-center gap-3 md:hidden">
             <Button variant="ghost">
               <Menu className="w-7 h-7" />
