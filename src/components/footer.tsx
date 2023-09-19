@@ -35,7 +35,9 @@ export function Footer() {
       <div className="pt-5 pb-14 px-8 mx-auto max-w-7xl">
         <div className="flex flex-col md:flex-row gap-2 items-center justify-between text-neutral-500 text-xs">
           <div className="text-center">
-            <span>© 2023 Progy. Todos os direitos reservados.</span>
+            <span>
+              © {new Date().getFullYear()} Progy. Todos os direitos reservados.
+            </span>
           </div>
           <div className="flex flex-row gap-1 items-center justify-end text-xs">
             <Link
