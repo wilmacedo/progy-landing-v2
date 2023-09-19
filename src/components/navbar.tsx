@@ -27,6 +27,7 @@ export function Navbar() {
             {routes.map((route) => (
               <Link key={route.path} href={route.path} legacyBehavior>
                 <Button
+                  asChild
                   variant="ghost"
                   className="text-4xl md:text-base text-secondary font-normal"
                 >
