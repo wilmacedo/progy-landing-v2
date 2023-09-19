@@ -1,5 +1,6 @@
 import { social } from "@/config/footer";
-import { Linkedin } from "lucide-react";
+import { usefulSections } from "@/config/routes";
+import { ArrowUpRight, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "./logo";
 
@@ -27,6 +28,33 @@ export function Footer() {
               >
                 <Linkedin className="w-4 h-4" />
               </Link>
+            ))}
+          </div>
+        </div>
+        <div className="flex flex-row justify-between text-sm">
+          <div className="flex flex-col w-full md:flex-row gap-3 justify-between md:gap-9">
+            {usefulSections.map((section, index) => (
+              <div
+                key={index}
+                className="flex flex-col gap-3 md:gap-4 px-5 py-2"
+              >
+                <span className="text-[#9098a0]">{section.title}</span>
+                {section.links.map((link) => {
+                  const isExternal = link.href.startsWith("http");
+
+                  return (
+                    <Link
+                      href={link.href}
+                      key={link.href}
+                      {...(isExternal && { target: "_blank" })}
+                      className="inline-flex items-center gap-2 text-[#666b71] transition-colors hover:text-white"
+                    >
+                      {link.name}
+                      {isExternal && <ArrowUpRight className="w-4 h-4" />}
+                    </Link>
+                  );
+                })}
+              </div>
             ))}
           </div>
         </div>
