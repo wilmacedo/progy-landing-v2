@@ -9,7 +9,25 @@ import "../styles/global.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Progy",
+  title: "Progy: Transforme visões em realidade",
+  description:
+    "O Progy é uma solução em software de gerenciamento de planejamento. Transforme suas visões em realidade e impulsione seu negócio com estratégias eficientes e resultados concretos. Descubra como podemos otimizar seu planejamento e alcançar seus objetivos.",
+  themeColor: '#ffffff',
+  robots: "index, follow",
+  openGraph: {
+    title: "Progy: Transforme visões em realidade",
+    description:
+      "O Progy é uma solução em software de gerenciamento de planejamento. Transforme suas visões em realidade e impulsione seu negócio com estratégias eficientes e resultados concretos. Descubra como podemos otimizar seu planejamento e alcançar seus objetivos.",
+    type: "website",
+    locale: "pt_BR",
+    url: "https://progy.com.br",
+    //image:
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@owilmacedo",
+    creator: "@owilmacedo",
+  },
 };
 
 export default function RootLayout({
