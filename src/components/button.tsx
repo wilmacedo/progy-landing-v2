@@ -1,9 +1,9 @@
-import { ComponentProps } from "react";
+import { ComponentProps, forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
 import { tv } from "tailwind-variants";
 
 const button = tv({
-  base: "px-4 py-2 inline-flex items-center justify-center rounded-md text-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  base: "inline-flex items-center justify-center rounded-md text-center font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   variants: {
     color: {
       default:
@@ -12,29 +12,36 @@ const button = tv({
       ghost:
         "text-secondary bg-transparent lg:hover:bg-accent lg:active:bg-accent",
     },
+    size: {
+      default: "px-4 py-2 text-sm",
+      lg: "px-5 py-2.5 text-base",
+    },
   },
   defaultVariants: {
     color: "default",
+    size: "default",
   },
 });
 
 type ButtonProps = ComponentProps<"button"> &
   ComponentProps<"a"> & {
     variant?: "default" | "outline" | "ghost";
+    size?: "default" | "lg";
     asChild?: boolean;
   };
 
-export function Button({
-  variant,
-  children,
-  className,
-  asChild,
-  ...rest
-}: ButtonProps) {
-  const Comp = asChild ? "a" : "button";
-  return (
-    <Comp className={twMerge(button({ color: variant }), className)} {...rest}>
-      {children}
-    </Comp>
-  );
-}
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ variant, size, children, className, asChild, ...rest }, ref) => {
+    const Comp = asChild ? "a" : "button";
+    return (
+      <Comp
+        className={twMerge(button({ color: variant, size }), className)}
+        {...rest}
+      >
+        {children}
+      </Comp>
+    );
+  }
+);
+
+Button.displayName = "Button";

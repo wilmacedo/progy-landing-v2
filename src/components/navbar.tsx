@@ -1,14 +1,38 @@
+"use client";
+
 import { routes } from "@/config/routes";
 
 import { Menu } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { AnnouncementBar } from "./announcement-bar";
 import { Button } from "./button";
 import { Logo } from "./logo";
 
 export function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="sticky top-0 z-50 transition-shadow duration-300 bg-white">
+    <div
+      data-scrolled={scrolled}
+      className="sticky top-0 z-50 transition-colors duration-300 bg-white border border-white data-[scrolled=true]:border-border"
+    >
       <div className="w-full max-w-[1440px] mx-auto px-6 flex flex-col-reverse md:flex-col">
         <AnnouncementBar />
         <div className="flex items-center py-4">

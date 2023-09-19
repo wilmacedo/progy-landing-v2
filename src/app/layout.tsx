@@ -20,7 +20,8 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={twMerge("min-h-full", inter.className)}>
         <Navbar />
-        <main>{children}</main>
+
+        <main className="transition-opacity duration-100">{children}</main>
 
         <CookiesBox />
       </body>

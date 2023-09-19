@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -24,6 +25,16 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ matchUtilities }) {
+      matchUtilities({
+        "animation-delay": (value) => {
+          return {
+            animationDelay: value,
+          };
+        },
+      });
+    }),
+  ],
 };
 export default config;

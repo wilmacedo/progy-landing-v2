@@ -1,3 +1,84 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .slide-down {
+    animation-duration: 750ms;
+    animation-fill-mode: both;
+    animation-name: slideDown;
+    animation-timing-function: ease;
+  }
+
+  .grid-line-horizontal {
+    animation-fill-mode: forwards;
+    animation-name: fadeInHorizontal;
+    animation-timing-function: ease;
+  }
+
+  .grid-line-vertical {
+    animation-fill-mode: forwards;
+    animation-name: fadeInVertical;
+    animation-timing-function: ease;
+  }
+
+  .grid-line-horizontal, .grid-line-vertical {
+    opacity: 0;
+    animation-duration: 1.5s;
+    stroke-dasharray: 1600;
+  }
+
+  .fade-in {
+    animation-fill-mode: forwards;
+    animation-name: fadeIn;
+    animation-timing-function: ease;
+    opacity: 0;
+    animation-duration: 3s;
+  }
+
+  @keyframes slideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-1.5rem);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInHorizontal {
+    0% {
+      stroke-dashoffset: 1600;
+      opacity: 0;
+    }
+
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInVertical {
+    0% {
+      stroke-dashoffset: -1600;
+      opacity: 0;
+    }
+
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}

@@ -8,7 +8,7 @@ import { AnimatedArrow } from "./animated-arrow";
 export function AnnouncementBar() {
   const [show, setShow] = useState(true);
 
-  const announcement = "A nova versão 2.0 do Progy está disponível 🎉";
+  const announcement = "A nova versão 2.0 do Progy já está disponível 🎉";
 
   function handleClick() {
     setShow((prev) => !prev);
