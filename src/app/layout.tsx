@@ -1,4 +1,5 @@
 import { CookiesBox } from "@/components/cookies-box";
+import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -22,6 +23,8 @@ export default function RootLayout({
         <Navbar />
 
         <main className="transition-opacity duration-100">{children}</main>
+
+        <Footer />
 
         <CookiesBox />
       </body>
