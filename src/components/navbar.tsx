@@ -37,7 +37,7 @@ export function Navbar() {
         <AnnouncementBar />
         <div className="flex items-center py-4">
           <Link
-            aria-label="Home"
+            aria-label="progy"
             className="flex items-center justify-center gap-2"
             href="/"
           >
