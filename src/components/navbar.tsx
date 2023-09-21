@@ -73,7 +73,7 @@ export function Navbar() {
             </Link>
           </nav>
           <div className="ml-auto flex items-center gap-3 md:hidden">
-            <Button variant="ghost">
+            <Button variant="ghost" aria-label="Menu">
               <Menu className="w-7 h-7" />
             </Button>
           </div>

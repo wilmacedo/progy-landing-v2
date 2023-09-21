@@ -10,7 +10,7 @@ export function Footer() {
       <div className="flex flex-col gap-10 md:gap-8 pt-10 pb-5 md:py-16 px-6 mx-auto w-full max-w-7xl">
         <div className="flex flex-row justify-between">
           <Link
-            aria-label="Home"
+            aria-label="progy"
             className="flex items-center justify-center gap-2"
             href="/"
           >
